@@ -1,5 +1,8 @@
 import type { StackScreenProps } from '@react-navigation/stack';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { Paths } from './paths';
+
+export type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 export type RootStackParamList = {
   [Paths.Startup]: undefined;
