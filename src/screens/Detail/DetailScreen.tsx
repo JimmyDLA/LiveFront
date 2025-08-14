@@ -1,21 +1,29 @@
-import { Text, SafeAreaView, StyleSheet } from 'react-native';
-import type { RootScreenProps } from '../../navigation/types';
+import { FC } from 'react';
+import { View, ScrollView, StyleSheet } from 'react-native';
+import type { RootScreenProps } from '../../types/types';
 import { Paths } from '../../navigation/paths';
+import { CharacterDetail } from '../../components/CharacterDetail';
+import { BackButton } from '../../components/BackButton';
 
 
-export const DetailScreen = ({}: RootScreenProps<Paths.DetailScreen>) => {
+export const DetailScreen: FC<RootScreenProps<Paths.DetailScreen>> = ({route}) => {
+  const { character } = route.params;
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>DETAIL SCREEN!!!</Text>
-    </SafeAreaView>
+    <ScrollView>
+      <View style={styles.backCont}>
+        <BackButton />
+      </View>
+      <CharacterDetail character={character} />
+    </ScrollView>
   );
 }
 
-const styles= StyleSheet.create({
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+const styles = StyleSheet.create({
+  backCont: {
+    position: 'absolute',
+    zIndex: 1,
+    top: 50,
+    left: 10,
   }
 })
 

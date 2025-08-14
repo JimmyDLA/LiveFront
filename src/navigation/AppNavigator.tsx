@@ -1,8 +1,7 @@
 import React from 'react';
-import type { RootStackParamList } from './types';
+import type { RootStackParamList } from '../types/types';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { 
-  Startup,
   HomeScreen,
   ListScreen,
   DetailScreen,
@@ -14,10 +13,9 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export const AppNavigator = () => {
   return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name={Paths.Startup} component={Startup} />
         <Stack.Screen name={Paths.HomeScreen} component={HomeScreen} />
-        <Stack.Screen name={Paths.DetailScreen} component={DetailScreen} />
         <Stack.Screen name={Paths.ListScreen} component={ListScreen} />
+        <Stack.Screen name={Paths.DetailScreen} component={DetailScreen} />
       </Stack.Navigator>
   );
 }

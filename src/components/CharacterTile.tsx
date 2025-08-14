@@ -1,13 +1,18 @@
+import { FC } from 'react';
 import { TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
-import type { NavigationProp } from '../navigation/types';
+import type { Character, NavigationProp } from '../types/types';
 import { useNavigation } from '@react-navigation/native';
 import { Paths } from '../navigation/paths';
 
-export const CharacterTile = ({character}) => {
+type CharactersProps = {
+  character: Character
+}
+
+export const CharacterTile: FC<CharactersProps> = ({character}) => {
   const navigation = useNavigation<NavigationProp>();
 
   const handleDetailScreen = () => {
-    navigation.navigate(Paths.DetailScreen, character)
+    navigation.navigate(Paths.DetailScreen, {character})
   }
   return (
     <TouchableOpacity onPress={handleDetailScreen} style={styles.container}>

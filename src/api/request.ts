@@ -19,6 +19,6 @@ export const GET = async (endpoint: string) => {
     return data
 
   } catch (err) {
-    console.error(err)
+    console.log(err)
   }
 }

@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { Text, SafeAreaView, StyleSheet } from 'react-native';
-import type { RootScreenProps } from '../../navigation/types';
+import type { NavigationProp } from '../../types/types';
+import { useNavigation } from '@react-navigation/native';
 import { Paths } from '../../navigation/paths';
 
 
-export const Startup = ({ navigation }: RootScreenProps<Paths.Startup>) => {
+export const Startup = () => {
+  const navigation = useNavigation<NavigationProp>();
 
   useEffect(() => {
     setTimeout(() => {
