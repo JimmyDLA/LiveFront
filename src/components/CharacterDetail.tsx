@@ -11,7 +11,7 @@ export const CharacterDetail: FC<CharacterProps> = ({character}) => {
 
   return (
     <>
-      <Image style={styles.image} source={{uri: character.image}} />
+      <Image testID="image" style={styles.image} source={{uri: character.image}} />
       <View style={styles.card}>
         <Text style={styles.name}>{character.name}</Text>
         <Text style={styles.key}>Status: </Text>

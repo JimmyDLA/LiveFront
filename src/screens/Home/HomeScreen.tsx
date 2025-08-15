@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, Image, StyleSheet } from 'react-native';
+import { View, ImageBackground, Image, StyleSheet } from 'react-native';
 import type { NavigationProp } from '../../types/types';
 import { Paths } from '../../navigation/paths';
 import { useNavigation } from '@react-navigation/native';
 import background from '../../../asset/background.jpg';
 import portal from '../../../asset/portal.png';
 import logo from '../../../asset/Rick_and_Morty.png';
+import { Button } from '../../components/Button';
 
 export const HomeScreen: FC = () => {
   const navigation = useNavigation<NavigationProp>();
@@ -20,9 +21,7 @@ export const HomeScreen: FC = () => {
         <Image style={styles.portal} resizeMode='contain' source={portal}/>
         <Image style={styles.logo} resizeMode='contain' source={logo} />
       </View>
-      <TouchableOpacity style={styles.button} onPress={handleList}>
-        <Text style={styles.buttonText}>Show List</Text>
-      </TouchableOpacity>
+      <Button onPress={handleList} title='Show List' />
     </ImageBackground>
   );
 }

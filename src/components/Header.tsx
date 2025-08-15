@@ -3,12 +3,12 @@ import { Text, SafeAreaView, StyleSheet, View } from "react-native"
 import { BackButton } from "./BackButton"
 
 type HeaderProps = {
-  title: string;
+  title?: string;
 }
 
 export const Header: FC<HeaderProps> = ({title}) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView testID="header-container" style={styles.container}>
       <View style={styles.subCont}>
         <BackButton />
         {title && <Text style={styles.title}>{title}</Text>}

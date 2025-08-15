@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import type { Character, NavigationProp } from '../types/types';
 import { useNavigation } from '@react-navigation/native';
 import { Paths } from '../navigation/paths';
@@ -15,8 +15,9 @@ export const CharacterTile: FC<CharactersProps> = ({character}) => {
     navigation.navigate(Paths.DetailScreen, {character})
   }
   return (
-    <TouchableOpacity onPress={handleDetailScreen} style={styles.container}>
-      <ImageBackground 
+    <TouchableOpacity testID="tile-button" onPress={handleDetailScreen} style={styles.container}>
+      <Image
+        testID="image"
         source={{uri: character.image}} 
         resizeMode="cover" 
         style={styles.background} 

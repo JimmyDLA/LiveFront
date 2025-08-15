@@ -5,11 +5,11 @@
 //   "episodes": "https://rickandmortyapi.com/api/episode"
 // }
 
-const BASE_URL = 'https://rickandmortyapi.com/api'
+export const BASE_URL = 'https://rickandmortyapi.com/api'
 
-export const GET = async (endpoint: string) => {
+export const GET = async (url: string) => {
   try {
-    const res = await fetch(`${BASE_URL}${endpoint}`);
+    const res = await fetch(url);
 
     if(!res.ok) {
       throw new Error(`ERROR: ${res.status}`)

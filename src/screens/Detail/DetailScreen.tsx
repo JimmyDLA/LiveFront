@@ -11,7 +11,7 @@ export const DetailScreen: FC<RootScreenProps<Paths.DetailScreen>> = ({route}) =
   return (
     <ScrollView>
       <View style={styles.backCont}>
-        <BackButton />
+        <BackButton isHeader={false} />
       </View>
       <CharacterDetail character={character} />
     </ScrollView>
