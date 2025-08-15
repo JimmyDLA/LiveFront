@@ -23,6 +23,33 @@ It uses the **Rick and Morty API** to fetch and display character information.
   npm install -g react-native-cli
   ```
 
+## Install Dependencies
+```sh
+# Using npm
+npm install
+
+# OR using Yarn
+yarn
+```
+
+For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+
+The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+
+```sh
+bundle install
+```
+
+Then, and every time you update your native dependencies, run:
+
+```sh
+cd ios
+
+bundle exec pod install
+# or
+pod install
+```
+
 ## Start Metro
 
 First, you will need to run **Metro**, the JavaScript build tool for React Native.
@@ -53,22 +80,7 @@ yarn android
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-cd ios
-bundle exec pod install
-# or
-pod install
-```
 
 For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
@@ -86,7 +98,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 ### Run Tests
 
-```bash
+```sh
 # Using npm
 npm run test
 
